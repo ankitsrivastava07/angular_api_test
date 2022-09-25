@@ -1,0 +1,36 @@
+.example-form {
+  min-width: 190px;
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  color:gray;
+  margin-top: 20px;
+
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+ .spinner_overlay {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+
+}
+.loading_gif{
+  margin-left: -34px;
+  margin-right: -34px;
+  
+  position: absolute;
+  opacity: 0.9;
+
+}
+  

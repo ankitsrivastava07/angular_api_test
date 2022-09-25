@@ -1,0 +1,42 @@
+  <form #requestDto ="ngForm" class="example-form" (submit)="sendRequest(requestDto.value)">
+    <div class="form-row">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Your Api Here</mat-label>
+        <input matInput placeholder="Ex. https://www.google.com/" name="uri" ngModel >
+      </mat-form-field>
+
+    <br>
+    <div class="form-group col-md-4">
+      <label for="inputState">Method</label>
+      <select id="inputState" class="form-control" name="methodType" ngModel>
+        <option selected value="">{{defaultOption}}</option>
+        <option value="Get">Get</option>
+        <option value = "Post">Post</option>
+        <option value="Patch">Patch</option>
+        <option value="Delete">Delete</option>
+        <option value="Options">Options</option>
+      </select>
+    </div>
+    <br>
+    <ng-template [ngIf]="loadingService.isLoading | async"> 
+    <div class="spinner_overlay">
+    <mat-spinner style="top: 50%; left: 50%;" class="loading_gif">
+    </mat-spinner>
+  </div>
+</ng-template>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Request Body</label>
+      <textarea class="form-control" id= "requestBody" name="requestBody" ngModel rows="8"></textarea>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Api Result Here</label>
+      <textarea class="form-control" name="responseBody" rows="8">
+        {{keyValue | json}}
+      </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </div>
+  </form>
